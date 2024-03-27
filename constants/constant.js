@@ -1,0 +1,19 @@
+export const homePage = [
+  {
+    _id: "65faa6313a5a57b47624970e",
+    name: "test01",
+    username: "khojo1",
+    templateId: "2",
+    phone: "+910000000000",
+    companyName: "khojo Right Now",
+    designation: "ceo",
+    email: "khojohead@gmail.com",
+    fbLink: "khojo123",
+    twitterLink: "khojo123",
+    instagramLink: "khojo123",
+    linkedinLink: "khojo123",
+    youTubeLink: "khojo123",
+    location: "Jaipur",
+    aboutMe: "company",
+  },
+];
