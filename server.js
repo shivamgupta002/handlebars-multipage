@@ -2,11 +2,38 @@ import express from "express";
 import exphbs from "express-handlebars";
 import path from "path";
 import { fileURLToPath } from "url"; // Import fileURLToPath function
-import { homePage as data } from "./constants/constant.js";
 import templateRoutes from "./routes/templatesRoutes.js";
+import fs from "fs";
+import Handlebars from "handlebars";
+import { homePage as data } from "./constants/constant.js";
 
-// Get directory name using fileURLToPath
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const templateFilePath = path.join(
+  __dirname,
+  "./views/templates/template1/template_1.handlebars"
+);
+
+// Read the Handlebars template file
+const templateSource = fs.readFileSync(templateFilePath, "utf8");
+// console.log(templateSource);
+
+// Compile the template
+const template = Handlebars.compile(templateSource);
+// console.log(template);
+
+// Read the JSON data
+const jsonData = fs.readFileSync("./constants/demo.json", "utf8");
+// console.log(jsonData);
+
+// Parse the JSON data
+const demoData = JSON.parse(jsonData);
+// console.log(demoData);
+// Render the template with the JSON data
+const renderedHtml = template(demoData);
+// Output the rendered HTML
+console.log(renderedHtml);
 
 const app = express();
 
@@ -23,7 +50,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", templateRoutes);
 
 app.get("/", (req, res) => {
-  res.render("home", { title: "Home" });
+  // res.render("home", { title: "Home", renderedHtml });
+  res.send(renderedHtml);
 });
 
 app.get("/about", (req, res) => {
