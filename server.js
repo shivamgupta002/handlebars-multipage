@@ -31,6 +31,7 @@ const jsonData = fs.readFileSync("./constants/demo.json", "utf8");
 // Parse the JSON data
 const demoData = JSON.parse(jsonData);
 // console.log(demoData);
+
 // Render the template with the JSON data
 const renderedHtml = template(demoData);
 // Output the rendered HTML
@@ -47,9 +48,18 @@ app.set("view engine", "handlebars");
 
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("/", (req, res) => {
+  // res.render("home", { title: "Home", renderedHtml });
+  res.send(renderedHtml);
+});
+
+app.get("/about", (req, res) => {
+  res.render("about", { title: "About Us" });
+});
+
 // Define routes
 app.use("/", templateRoutes);
-app.use("/", pagesRoutes);
+// app.use("/", pagesRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

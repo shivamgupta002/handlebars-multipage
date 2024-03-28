@@ -5,6 +5,7 @@ const router = express.Router();
 router.get("/template1", (req, res) => {
   res.render("templates/template1/template_1", { title: "template1", data });
 });
+
 router.get("/template1/about", (req, res) => {
   res.render("templates/template1/about", { title: "template1-about" });
 });

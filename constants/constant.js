@@ -14,6 +14,6 @@ export const homePage = [
     linkedinLink: "khojo123",
     youTubeLink: "khojo123",
     location: "Jaipur",
-    aboutMe: "company",
+    aboutMe: "Daksh travels is a good company",
   },
 ];
