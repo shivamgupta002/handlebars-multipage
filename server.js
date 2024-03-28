@@ -3,6 +3,7 @@ import exphbs from "express-handlebars";
 import path from "path";
 import { fileURLToPath } from "url"; // Import fileURLToPath function
 import templateRoutes from "./routes/templatesRoutes.js";
+import pagesRoutes from "./routes/pagesRoutes.js";
 import fs from "fs";
 import Handlebars from "handlebars";
 import { homePage as data } from "./constants/constant.js";
@@ -33,7 +34,7 @@ const demoData = JSON.parse(jsonData);
 // Render the template with the JSON data
 const renderedHtml = template(demoData);
 // Output the rendered HTML
-console.log(renderedHtml);
+// console.log(renderedHtml);
 
 const app = express();
 
@@ -48,15 +49,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Define routes
 app.use("/", templateRoutes);
-
-app.get("/", (req, res) => {
-  // res.render("home", { title: "Home", renderedHtml });
-  res.send(renderedHtml);
-});
-
-app.get("/about", (req, res) => {
-  res.render("about", { title: "About Us" });
-});
+app.use("/", pagesRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
