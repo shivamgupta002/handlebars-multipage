@@ -13,7 +13,13 @@ router.get("/template1/about", (req, res) => {
 router.get("/template2", (req, res) => {
   res.render("templates/template2/template_2", { title: "template2", data });
 });
+
 router.get("/template2/about", (req, res) => {
   res.render("templates/template2/about", { title: "template2-about" });
 });
+
+router.get("/template3", (req, res) => {
+  res.render("templates/template3/template_3", { title: "template3", data });
+});
+
 export default router;

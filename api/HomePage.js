@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import Template1 from "./Template1/Template1";
 
 const HomePage = () => {
   const { username } = useParams();
@@ -23,12 +22,6 @@ const HomePage = () => {
     fetchHandler();
   }, [username]);
   console.log(inputs);
-
-  return (
-    <>
-      <Template1 data={inputs} />
-    </>
-  );
 };
 
 export default HomePage;

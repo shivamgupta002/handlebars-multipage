@@ -1,20 +1,36 @@
 import express from "express";
 import exphbs from "express-handlebars";
+import axios from "axios";
 import path from "path";
 import { fileURLToPath } from "url"; // Import fileURLToPath function
 import templateRoutes from "./routes/templatesRoutes.js";
-import pagesRoutes from "./routes/pagesRoutes.js";
 import fs from "fs";
 import Handlebars from "handlebars";
-import { homePage as data } from "./constants/constant.js";
+// import { homePage as data } from "./constants/constant.js";
 
+const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 const templateFilePath = path.join(
   __dirname,
   "./views/templates/template1/template_1.handlebars"
 );
+
+app.use(express.static(path.join(__dirname, "public")));
+
+let homePageData;
+app.use("/data/:username", async (req, res, next) => {
+  const { username } = req.params;
+  try {
+    const response = await axios.get(`http://localhost:5000/data/${username}`);
+    // console.log(response);
+    req.apiData = response.data; // Attach fetched data to req object
+    next(); // Proceed to the next middleware/route handler
+  } catch (error) {
+    // console.error("Error fetching data:", error);
+    res.status(500).send("Error fetching data from API");
+  }
+});
 
 // Read the Handlebars template file
 const templateSource = fs.readFileSync(templateFilePath, "utf8");
@@ -28,6 +44,12 @@ const template = Handlebars.compile(templateSource);
 const jsonData = fs.readFileSync("./constants/demo.json", "utf8");
 // console.log(jsonData);
 
+// Convert JavaScript object to JSON string
+// const jsonData = JSON.stringify(data, null, 2); // null and 2 are for formatting
+
+// Write the JSON data back to the file
+// fs.writeFileSync("./constants/demo.json", jsonData, "utf8");
+
 // Parse the JSON data
 const demoData = JSON.parse(jsonData);
 // console.log(demoData);
@@ -37,8 +59,6 @@ const renderedHtml = template(demoData);
 // Output the rendered HTML
 // console.log(renderedHtml);
 
-const app = express();
-
 const hbs = exphbs.create({
   defaultLayout: "main",
 });
@@ -46,9 +66,25 @@ const hbs = exphbs.create({
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
-app.use(express.static(path.join(__dirname, "public")));
+app.get("/data/:username", (req, res) => {
+  const { username } = req.params;
+  // console.log(username);
+  const { apiData } = req; // Access the fetched data from req object
+  // console.log(apiData);
+  // Render the template with the fetched data
+  homePageData = apiData;
+
+  res.render("templates/template2/template_2", {
+    title: "template1",
+    username,
+    data: homePageData, // Pass only the response data to the template
+  });
+
+  // res.send(renderedHtml);
+});
 
 app.get("/", (req, res) => {
+  // res.render("home", { title: "Home" });
   // res.render("home", { title: "Home", renderedHtml });
   res.send(renderedHtml);
 });
