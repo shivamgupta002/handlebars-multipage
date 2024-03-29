@@ -59,7 +59,7 @@ app.get("/data/:username", (req, res) => {
   const { apiData } = req; // Access the fetched data from req object
   // Render the template with the fetched data
   homePageData = apiData;
-  res.render("templates/template2/template_2", {
+  res.render("templates/template1/template_1", {
     homePageData: homePageData, // Pass only the response data to the template
   });
   // res.send(renderedHtml);
