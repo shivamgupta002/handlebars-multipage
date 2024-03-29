@@ -24,7 +24,7 @@ app.set("view engine", "handlebars");
 app.use(express.static(path.join(__dirname, "public")));
 
 let homePageData;
-app.use("/data/:username", async (req, res, next) => {
+app.use("/:username", async (req, res, next) => {
   const { username } = req.params;
   try {
     const response = await axios.get(`http://localhost:5000/data/${username}`);
@@ -36,7 +36,7 @@ app.use("/data/:username", async (req, res, next) => {
 });
 const templatesPath = path.join(__dirname, "./views", "templates");
 
-app.get("/data/:username", (req, res) => {
+app.get("/:username", (req, res) => {
   const { username } = req.params;
   const { apiData } = req; // Access the fetched data from req object
   // Render the template with the fetched data
