@@ -6,7 +6,6 @@ import { fileURLToPath } from "url"; // Import fileURLToPath function
 import templateRoutes from "./routes/templatesRoutes.js";
 import fs from "fs";
 import Handlebars from "handlebars";
-// import { homePage as data } from "./constants/constant.js";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -44,12 +43,6 @@ const template = Handlebars.compile(templateSource);
 const jsonData = fs.readFileSync("./constants/demo.json", "utf8");
 // console.log(jsonData);
 
-// Convert JavaScript object to JSON string
-// const jsonData = JSON.stringify(data, null, 2); // null and 2 are for formatting
-
-// Write the JSON data back to the file
-// fs.writeFileSync("./constants/demo.json", jsonData, "utf8");
-
 // Parse the JSON data
 const demoData = JSON.parse(jsonData);
 // console.log(demoData);
@@ -73,13 +66,10 @@ app.get("/data/:username", (req, res) => {
   // console.log(apiData);
   // Render the template with the fetched data
   homePageData = apiData;
-
+  // console.log(homePageData);
   res.render("templates/template2/template_2", {
-    title: "template1",
-    username,
-    data: homePageData, // Pass only the response data to the template
+    homePageData: homePageData, // Pass only the response data to the template
   });
-
   // res.send(renderedHtml);
 });
 
