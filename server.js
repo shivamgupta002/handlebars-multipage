@@ -4,17 +4,23 @@ import axios from "axios";
 import path from "path";
 import { fileURLToPath } from "url"; // Import fileURLToPath function
 import templateRoutes from "./routes/templatesRoutes.js";
-import fs from "fs";
-import Handlebars from "handlebars";
+// import fs from "fs";
+// import Handlebars from "handlebars";
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const templateFilePath = path.join(
-  __dirname,
-  "./views/templates/template1/template_1.handlebars"
-);
+// const templateFilePath = path.join(
+//   __dirname,
+//   "./views/templates/template1/template_1.handlebars"
+// );
 
+const hbs = exphbs.create({
+  defaultLayout: "main",
+});
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 app.use(express.static(path.join(__dirname, "public")));
 
 let homePageData;
@@ -28,42 +34,32 @@ app.use("/data/:username", async (req, res, next) => {
     res.status(500).send("Error fetching data from API");
   }
 });
+const templatesPath = path.join(__dirname, "./views", "templates");
 
-// Read the Handlebars template file
-const templateSource = fs.readFileSync(templateFilePath, "utf8");
-
-// Compile the template
-const template = Handlebars.compile(templateSource);
-
-// Read the JSON data
-const jsonData = fs.readFileSync("./constants/demo.json", "utf8");
-
-// Parse the JSON data
-const demoData = JSON.parse(jsonData);
-
-// Render the template with the JSON data
-const renderedHtml = template(demoData);
-// Output the rendered HTML
-// console.log(renderedHtml);
-
-const hbs = exphbs.create({
-  defaultLayout: "main",
-});
-
-app.engine("handlebars", hbs.engine);
-app.set("view engine", "handlebars");
-
-// fetching data of username
 app.get("/data/:username", (req, res) => {
   const { username } = req.params;
   const { apiData } = req; // Access the fetched data from req object
   // Render the template with the fetched data
   homePageData = apiData;
-  res.render("templates/template1/template_1", {
+
+  const templateDirectory = "templates";
+  let templateFilePath;
+  if (homePageData.templateId === "1") {
+    templateFilePath = "template1/template_1";
+    console.log(homePageData.templateId);
+  } else if (homePageData.templateId === "2") {
+    templateFilePath = "template2/template_2";
+    console.log(homePageData.templateId);
+  }
+  const fileName = path.join(templateDirectory, templateFilePath);
+
+  res.render(fileName, {
     homePageData: homePageData, // Pass only the response data to the template
   });
-  // res.send(renderedHtml);
+
 });
+
+// fetching data of username
 
 app.get("/", (req, res) => {
   res.render("home", { title: "Home" });
