@@ -1,3 +1,4 @@
+{{!-- {{leadData.name}} --}}
 <html lang="en">
 
   <head>
@@ -28,7 +29,7 @@
         >
           <img src="image/template1/logo/btn.svg" alt="" class="img-fluid" />
         </button>
-        <a class="navbar-brand" href="#">{{homePageData.companyName}}</a>
+        <a class="navbar-brand" href="#">{{allData.home.companyName}}</a>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown active d-none d-md-none d-lg-block">
@@ -89,7 +90,7 @@
                       <div class="about-card">
                         <div class="card">
                           <div class="card-body">
-                            <h2>{{homePageData.name}}</h2>
+                            <h2>{{allData.home.name}}</h2>
                             <div class="star">4.1
                               <img
                                 src="image/template1/sidebar/star.svg"
@@ -102,7 +103,7 @@
                               <button class="btn-about">Directions</button>
                             </div>
                             <h6>About Us</h6>
-                            <p>{{homePageData.aboutMe}}</p>
+                            <p>{{allData.home.aboutMe}}</p>
                           </div>
                         </div>
                       </div>
@@ -351,8 +352,8 @@
                                     <div class="contact">
                                       {{!-- <h6>{{leadData.name}}</h6>
                                       <p>{{leadData.email}}</p> --}}
-                                      <h6>Daksh Travels</h6>
-                                      <p>khojope/dakshtravels</p>
+                                      <h6>{{allData.leadForm.name}}</h6>
+                                      <p>{{allData.leadForm.email}}</p>
                                     </div>
                                   </div>
                                   <div class="card my-3">
@@ -371,8 +372,8 @@
                                       <div class="letter">D</div>
                                     </div>
                                     <div class="contact">
-                                      <h6>Daksh Travels</h6>
-                                      <p>khojope/dakshtravels</p>
+                                      <h6>{{allData.leadForm.name}}</h6>
+                                      <p>{{allData.leadForm.email}}</p>
                                     </div>
                                   </div>
                                   <div class="card my-3">
@@ -391,8 +392,8 @@
                                       <div class="letter">D</div>
                                     </div>
                                     <div class="contact">
-                                      <h6>Daksh Travels</h6>
-                                      <p>khojope/dakshtravels</p>
+                                      <h6>{{allData.leadForm.name}}</h6>
+                                      <p>{{allData.leadForm.email}}</p>
                                     </div>
                                   </div>
                                   <div class="card my-3">
@@ -411,8 +412,8 @@
                                       <div class="letter">D</div>
                                     </div>
                                     <div class="contact">
-                                      <h6>Daksh Travels</h6>
-                                      <p>khojope/dakshtravels</p>
+                                      <h6>{{allData.leadForm.name}}</h6>
+                                      <p>{{allData.leadForm.email}}</p>
                                     </div>
                                   </div>
                                   <div class="card my-3">
@@ -431,8 +432,8 @@
                                       <div class="letter">D</div>
                                     </div>
                                     <div class="contact">
-                                      <h6>Daksh Travels</h6>
-                                      <p>khojope/dakshtravels</p>
+                                      <h6>{{allData.leadForm.name}}</h6>
+                                      <p>{{allData.leadForm.email}}</p>
                                     </div>
                                   </div>
                                   <div class="card my-3">
@@ -451,8 +452,8 @@
                                       <div class="letter">D</div>
                                     </div>
                                     <div class="contact">
-                                      <h6>Daksh Travels</h6>
-                                      <p>khojope/dakshtravels</p>
+                                      <h6>{{allData.leadForm.name}}</h6>
+                                      <p>{{allData.leadForm.email}}</p>
                                     </div>
                                   </div>
                                   <div class="card my-3">
@@ -471,8 +472,8 @@
                                       <div class="letter">D</div>
                                     </div>
                                     <div class="contact">
-                                      <h6>Daksh Travels</h6>
-                                      <p>khojope/dakshtravels</p>
+                                      <h6>{{allData.leadForm.name}}</h6>
+                                      <p>{{allData.leadForm.email}}</p>
                                     </div>
                                   </div>
                                   <div class="card my-3">
@@ -512,8 +513,8 @@
                           <div class="letter">D</div>
                         </div>
                         <div class="contact">
-                          <h6>{{homePageData.name}}</h6>
-                          <p style="color:white;">{{homePageData.email}}</p>
+                          <h6>{{allData.home.name}}</h6>
+                          <p style="color:white;">{{allData.home.email}}</p>
                         </div>
                       </div>
                       <div class="col-12 col-md-12 col-lg-8 btn-group">
@@ -538,6 +539,6 @@
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     ></script>
     <script src="/js/template2.js"></script>
-  </body>
+  </body> 
 
 </html>
