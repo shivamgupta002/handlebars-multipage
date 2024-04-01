@@ -1,0 +1,468 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour guide</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha512-L7MWcK7FNPcwNqnLdZq86lTHYLdQqZaz5YcAgE+5cnGmlw8JT03QB2+oxL100UeB6RlzZLUxCGSS4/++mNZdxw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/template3.css" />
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <div id="menu-bar" class="fas fa-bars"></div>
+
+      <a href="#" class="logo">{{allData.home.companyName}}</a>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#review">Review</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-user" id="login-btn"></i>
+      </div>
+
+    </header>
+
+    <!-- login form container -->
+    <div class="login-form-container">
+      <i class="fa-solid fa-xmark" id="form-close"></i>
+      <form action="">
+        <h3>login</h3>
+        <input type="email" class="box" placeholder="enter you email" />
+        <input type="password" class="box" placeholder="enter your password" />
+        <input type="submit" value="login" class="btn" />
+        <input type="checkbox" id="remember" />
+        <label for="remember"> remember me</label>
+        <p>forgot password?<a href="#">click here</a></p>
+        <p>don't have an account? <a href="#">register now</a></p>
+      </form>
+    </div>
+
+    <!-- home section starts -->
+    <section class="home" id="home">
+      <div class="content">
+        <h3>{{allData.home.companyName}}</h3>
+        {{!-- <h3>Live your travel dreams</h3> --}}
+        <p>{{allData.home.aboutMe}}</p>
+        <a href="#" class="btn"> discover more</a>
+      </div>
+
+      <div class="controls">
+        <span
+          class="vid-btn active"
+          data-src="/image/template3/vid1.mp4"
+        ></span>
+        <span class="vid-btn" data-src="/image/template3/vid2.mp4"></span>
+        <span class="vid-btn" data-src="/image/template3/vid3.mp4"></span>
+        <span class="vid-btn" data-src="/image/template3/vid4.mp4"></span>
+        <span class="vid-btn" data-src="/image/template3/vid5.mp4"></span>
+      </div>
+
+      <div class="video-container">
+        <video
+          src="/image/template3/vid1.mp4"
+          id="video-slider"
+          loop
+          autoplay
+          muted
+        ></video>
+      </div>
+    </section>
+
+    <!-- Packages section ends -->
+    <!-- service section starts -->
+    <section class="services" id="services">
+      <h1 class="heading" data-aos="fade-up" data-aos-duration="3000">
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>
+      </h1>
+      <div class="box-container">
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+          <i class="fas fa-hotel"></i>
+          <h3>affordable hotels</h3>
+          <p>
+            Choose From a Wide Range of Properties Which Offers! Book Cheap
+            Hotels Online. No reservation costs. Great rates. 24/7 Customer
+            Service. Flight + Hotel. Low Rates. Great Choice. Apartments. Best
+            Price Guarantee.
+          </p>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+          <i class="fas fa-utensils"></i>
+          <h3>food and drinks</h3>
+          <p>
+            best quality food and beverages are available, both vegiterranean
+            and non-vegiterranean, seprate food for childrens. Best quality food
+            prepared by the assured chefs with proper hygiene and precautions.
+          </p>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+          <i class="fas fa-bullhorn"></i>
+          <h3>safty guide</h3>
+          <p>
+            Your safety is your personal responsibility. Always follow the
+            correct procedures. Never take shortcuts. Take responsibility and
+            clean up if you made a mess. Ensure a clear and easy route to
+            emergency exits and equipment.
+          </p>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+          <i class="fas fa-globe-asia"></i>
+          <h3>around the world</h3>
+          <p>
+            Planning an around the world trip can be an overwhelming experience.
+            From figuring out your budget to designing your itinerary to packing
+            your bags, reach there to get some new experience.
+          </p>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+          <i class="fas fa-plane"></i>
+          <h3>fastest travel</h3>
+          <p>
+            the fasster the travel the faster you reach to your dream
+            destinations. we assures you the fastest mode of travel possible so
+            that you don't have to losse your time and enjoy more.
+          </p>
+        </div>
+
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+          <i class="fas fa-hiking"></i>
+          <h3>adventures</h3>
+          <p>
+            an exciting or very unusual experience. participation in exciting
+            undertakings or enterprises: the spirit of adventure. different
+            adventrous activities like bunggy, rafting, climbing etc.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- service section starts -->
+    <!-- gallery section starts -->
+    <section class="gallery" id="gallery">
+      <h1 class="heading" data-aos="fade-down" data-aos-duration="3000">
+        <span>g</span>
+        <span>a</span>
+        <span>l</span>
+        <span>l</span>
+        <span>e</span>
+        <span>r</span>
+        <span>y</span>
+      </h1>
+      <div class="box-container">
+        <div class="box" data-aos="fade-up" data-aos-duration="2500">
+          <img src="/image/template3/g-1.jpg" alt="" />
+          <div class="content">
+            <h3>amazing places</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+              repellat?
+            </p>
+            <a href="#" class="btn">see more</a>
+          </div>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="2500">
+          <img src="/image/template3/g-2.jpg" alt="" />
+          <div class="content">
+            <h3>amazing places</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+              repellat?
+            </p>
+            <a href="#" class="btn">see more</a>
+          </div>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="2500">
+          <img src="/image/template3/g-3.jpg" alt="" />
+          <div class="content">
+            <h3>amazing places</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+              repellat?
+            </p>
+            <a href="#" class="btn">see more</a>
+          </div>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+          <img src="/image/template3/g-4.jpg" alt="" />
+          <div class="content">
+            <h3>amazing places</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+              repellat?
+            </p>
+            <a href="#" class="btn">see more</a>
+          </div>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+          <img src="/image/template3/g-5.jpg" alt="" />
+          <div class="content">
+            <h3>amazing places</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+              repellat?
+            </p>
+            <a href="#" class="btn">see more</a>
+          </div>
+        </div>
+        <div class="box" data-aos="fade-up" data-aos-duration="2000">
+          <img src="/image/template3/g-6.jpg" alt="" />
+          <div class="content">
+            <h3>amazing places</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat,
+              repellat?
+            </p>
+            <a href="#" class="btn">see more</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- gallery section ends -->
+
+    <!-- review section starts -->
+    <section class="review" id="review">
+      <h1 class="heading" data-aos="fade-down" data-aos-duration="3000">
+        <span>r</span>
+        <span>e</span>
+        <span>v</span>
+        <span>i</span>
+        <span>e</span>
+        <span>w</span>
+      </h1>
+      <div class="swiper review-slider">
+        <div class="swiper-wrapper">
+          <div
+            class="swiper-slide"
+            data-aos="fade-down"
+            data-aos-duration="3000"
+          >
+            <div class="box">
+              <img src="/image/template3/img-1.jpg" alt="" />
+              <h3>john deo</h3>
+              <p>
+                Easy booking friendly service hassle free definitely would
+                recommend and will book our next holiday with them again.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            data-aos="fade-down"
+            data-aos-duration="3000"
+          >
+            <div class="box">
+              <img src="/image/template3/img-2.jpg" alt="" />
+              <h3>Sophie </h3>
+              <p>
+                Great service. Big shout out to Tammy for helping with one of
+                our friends who was distressed and had to leave suddenly due to
+                family death.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            data-aos="fade-down"
+            data-aos-duration="3000"
+          >
+            <div class="box">
+              <img src="/image/template3/img-3.jpg" alt="" />
+              <h3>Trevor Kick</h3>
+              <p>
+                Great service- efficient and friendly.Very helpful staff. Easy
+                to contact and resolve any issues. Had a great experience.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            data-aos="fade-down"
+            data-aos-duration="3000"
+          >
+            <div class="box">
+              <img src="/image/template3/img-4.jpg" alt="" />
+              <h3>Steven Goding</h3>
+              <p>
+                Easy to deal with and quick reply's if you have any questions.
+                This is the 3rd overseas holiday we have booked through travel
+                online.
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <div
+            class="swiper-slide"
+            data-aos="fade-down"
+            data-aos-duration="3000"
+          >
+            <div class="box">
+              <img src="/image/template3/img-5.jpg" alt="" />
+              <h3>Anna Chammeol</h3>
+              <p>
+                Thankyou, The package provided met all our needs and gave us the
+                opportunity to experience more than we thought we would
+              </p>
+              <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- reviews section ends -->
+    <!-- contact section -->
+    <section
+      class="contact"
+      id="contact"
+      data-aos="fade-down"
+      data-aos-duration="3000"
+    >
+      <h1 class="heading">
+        <span>c</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+      </h1>
+      <div class="row">
+        <div class="image" data-aos="fade-right" data-aos-duration="2500">
+          <img src="/image/template3/book-img.jpg" alt="" />
+        </div>
+
+        <form action="" data-aos="fade-left" data-aos-duration="2500">
+          <div class="inputBox">
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+          </div>
+          <div class="inputBox">
+            <input type="number" placeholder="Number" />
+            <input type="text" placeholder="Subject" />
+          </div>
+          <textarea
+            placeholder="Message"
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+          <input type="submit" class="btn" value="send message" />
+        </form>
+      </div>
+    </section>
+
+    <!-- contact ends -->
+    <!-- footer -->
+    <section class="footer">
+      <div class="box-container">
+        <div class="box" data-aos="fade-right" data-aos-duration="2800">
+          <h3>about us</h3>
+          <p>
+           {{allData.home.aboutMe}}
+          </p>
+        </div>
+        <div class="box" data-aos="fade-right" data-aos-duration="2800">
+          <h3>branch locations</h3>
+          <a href="#">india</a>
+          <a href="#">USA</a>
+          <a href="#">sydney</a>
+          <a href="#">Tokyo</a>
+        </div>
+        <div class="box" data-aos="fade-left" data-aos-duration="2800">
+          <h3>quick links</h3>
+          <a href="#home">Home</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#review">Review</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="box" data-aos="fade-left" data-aos-duration="2800">
+          <h3>follow us</h3>
+          <a href="#">facebook</a>
+          <a href="#">instagram</a>
+          <a href="#">twitter</a>
+          <a href="#">linkedin</a>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+    ></script>
+    <script src="/js/template3.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+
+</html>

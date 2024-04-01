@@ -39,7 +39,8 @@ app.get("/:username", (req, res) => {
   const templateDirectory = "templates";
   let templateFilePath;
   if (templateId === "1") {
-    templateFilePath = "template1/template_1";
+    templateFilePath = "template3/template3";
+    // templateFilePath = "template1/template_1";
     // templateFilePath = "template2/template_2";
   } else if (templateId === "2") {
     templateFilePath = "template2/template_2";

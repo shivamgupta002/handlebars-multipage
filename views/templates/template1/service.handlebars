@@ -1,3 +1,67 @@
-<main>
-   <h2>Welcome to template 1 -Service page</h2>
-</main>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template1</title>
+    <link rel="stylesheet" href="/css/template1.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      {{!-- navbar --}}
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a
+          class="navbar-brand"
+          href="/{{allData.home.username}}"
+        >{{allData.home.companyName}}</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/{{allData.home.username}}/about"
+              >About</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/{{allData.home.username}}/service"
+              >Service</a>
+            </li>
+
+          </ul>
+
+        </div>
+      </nav>
+      <h2>Welcome to the Template2 Service Page!</h2>
+      <p>This is the Template2 Service page content.</p>
+      <h1>This is home page data</h1>
+      <p>Name :{{allData.home.name}}</p>
+      <p>Username :{{allData.home.name}}</p>
+      <p>templateId :{{allData.home.templateId}}</p>
+      <p>phone :{{allData.home.phone}}</p>
+      <p>companyName :{{allData.home.companyName}}</p>
+      <p>designation :{{allData.home.designation}}</p>
+      <p>email :{{allData.home.email}}</p>
+      <p>Location :{{allData.home.location}}</p>
+      <h1>This is leadForm data</h1>
+      <p>Name :{{allData.leadForm.name}}</p>
+      <p>phone :{{allData.leadForm.phone}}</p>
+      <p>email :{{allData.leadForm.email}}</p>
+      <p>Message :{{allData.leadForm.message}}</p>
+<h3>and so on</h3>
+    </main>
+  </body>
+</html>
