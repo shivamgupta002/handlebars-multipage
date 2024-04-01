@@ -35,11 +35,12 @@ app.get("/:username", (req, res) => {
   allData = apiData;
   const templateId = allData.home.templateId;
   // console.log(allData);
-  console.log(templateId);
+  // console.log(templateId);
   const templateDirectory = "templates";
   let templateFilePath;
   if (templateId === "1") {
     templateFilePath = "template1/template_1";
+    // templateFilePath = "template2/template_2";
   } else if (templateId === "2") {
     templateFilePath = "template2/template_2";
   }
