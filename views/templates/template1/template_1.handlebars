@@ -17,64 +17,65 @@
     <!-- Main Content Area -->
     <div class="main-content">
       {{! Header }}
-      <nav class="navbar navbar-expand-lg">
+      <nav class="navbar navbar-expand-lg navbar-black bg-black">
+        <a class="navbar-brand" href="/{{allData.home.username}}">{{allData.home.companyName}}</a>
         <button
           class="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <img src="image/template1/logo/btn.svg" alt="" class="img-fluid" />
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">{{allData.home.companyName}}</a>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown active d-none d-md-none d-lg-block">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
               <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Menu
-              </a>
-              <div
-                class="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <a class="dropdown-item" href="#">Products</a>
-                <a class="dropdown-item" href="#">Reviews</a>
-                <a class="dropdown-item" href="/about">About</a>
-                <a class="dropdown-item" href="#">Query</a>
-              </div>
+                class="nav-link"
+                href="/{{allData.home.username}}/about"
+              >About</a>
             </li>
-            <li class="nav-item dropdown active d-block d-md-block d-lg-none">
-              <a class="nav-link" href="#">Products</a>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/{{allData.home.username}}/service"
+              >Service</a>
             </li>
-            <li class="nav-item dropdown active d-block d-md-none d-lg-none">
-              <a class="nav-link" href="#">Reviews</a>
-            </li>
-            <li class="nav-item dropdown active d-block d-md-none d-lg-none">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
-            <li class="nav-item dropdown active d-block d-md-none d-lg-none">
-              <a class="nav-link" href="#">Query</a>
-            </li>
+
           </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="submit"
+            >Search</button>
+          </form>
         </div>
       </nav>
       {{! background }}
       <div class="header d-none d-md-block d-lg-block">
         <div class="profile">
-          <img src="image/template1/logo/profile.svg" class="img-fluid" alt="" />
+          <img
+            src="image/template1/logo/profile.svg"
+            class="img-fluid"
+            alt=""
+          />
         </div>
         <div class="profile-logo">
-          <img src="image/template1/logo/profile-logo.svg" class="img-fluid" alt="" />
+          <img
+            src="image/template1/logo/profile-logo.svg"
+            class="img-fluid"
+            alt=""
+          />
         </div>
       </div>
       {{! main body }}
@@ -539,6 +540,6 @@
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     ></script>
     <script src="/js/template2.js"></script>
-  </body> 
+  </body>
 
 </html>

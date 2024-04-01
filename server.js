@@ -34,8 +34,8 @@ app.get("/:username", (req, res) => {
   const { apiData } = req; // Access the fetched data from req object
   allData = apiData;
   const templateId = allData.home.templateId;
-  console.log(allData);
-  // console.log(templateId);
+  // console.log(allData);
+  console.log(templateId);
   const templateDirectory = "templates";
   let templateFilePath;
   if (templateId === "1") {
@@ -50,13 +50,51 @@ app.get("/:username", (req, res) => {
   });
 });
 
+app.get("/:username/about",(req,res)=>{
+  const { apiData } = req; // Access the fetched data from req object
+  allData = apiData;
+  const templateDirectory = "templates";
+  let templateFilePath;
+  const templateId = allData.home.templateId;
+
+  if (templateId === "1") {
+    templateFilePath = "template1/about";
+  } else if (templateId === "2") {
+    templateFilePath = "template2/about";
+  }
+  const fileName = path.join(templateDirectory, templateFilePath);
+
+  res.render(fileName, {
+    allData: allData, // Pass only the response data to the template
+  });
+})
+
+app.get("/:username/service",(req,res)=>{
+  const { apiData } = req; // Access the fetched data from req object
+  allData = apiData;
+  const templateDirectory = "templates";
+  let templateFilePath;
+  const templateId = allData.home.templateId;
+
+  if (templateId === "1") {
+    templateFilePath = "template1/service";
+  } else if (templateId === "2") {
+    templateFilePath = "template2/service";
+  }
+  const fileName = path.join(templateDirectory, templateFilePath);
+
+  res.render(fileName, {
+    allData: allData, // Pass only the response data to the template
+  });
+})
+
 app.get("/", (req, res) => {
   res.render("home", { title: "Home" });
 });
 
-app.get("/about", (req, res) => {
-  res.render("about", { title: "About Us" });
-});
+// app.get("/about", (req, res) => {
+//   res.render("about", { title: "About Us" });
+// });
 
 // Define routes
 app.use("/", templateRoutes);
